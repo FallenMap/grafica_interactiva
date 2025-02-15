@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo de Atenas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="mapa.js"></script> <!-- Script javascript con lógica del mapa-->
+</head>
+<body>
+    <!-- Menú de navegación principal -->
+    <nav class="main-nav">
+        <ul class="desktop-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="espacio.html">El Espacio Físico</a></li>
+            <li><a href="personajes.html">Los Personajes</a></li>
+            <li><a href="actividades.html">Las Actividades</a></li>
+            <li><a href="historia.html">La Historia</a></li>
+            <li><a href="mapa.html">Mapa Interactivo</a></li> <!-- Nueva opción Mapa-->
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+
+        <!-- Checkbox para activar el menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu">
+        <label for="toggle-menu" class="hamburger">&#9776;</label>
+        
+        <ul class="mobile-menu" id="mobile-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="espacio.html">El Espacio Físico</a></li>
+            <li><a href="personajes.html">Los Personajes</a></li>
+            <li><a href="actividades.html">Las Actividades</a></li>
+            <li><a href="historia.html">La Historia</a></li>
+            <li><a href="mapa.html">Mapa Interactivo</a></li> <!-- Nueva opción Mapa-->
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header class="hero">
+        <h1>Explora Atenas Interactivamente</h1>
+        <p>¡Interactúa con el mapa de Atenas y ubica los lugares de la ciudad!</p>
+        <p>📍 Haz clic o toca un punto en el mapa para más información.</p>
+    </header>
+
+    <!-- Mapa -->
+    <main>
+        <section class="map-container">
+            <div class="map-wrapper">
+                <img src="./images/atenas-mapa.png" alt="Mapa de Atenas">
+                <div class="points-container"></div> <!-- Aquí van los puntos -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Lista de lugares con enlaces -->
+    <main class="credits">
+        <section class="intro">
+            <h2>Lugares de Atenas</h2>
+            <ul>
+                <li><a href="espacio.html#partenon">El Partenón</a></li>
+                <li><a href="espacio.html#agora">El Ágora</a></li>
+                <li><a href="espacio.html#templo-zeus">Templo de Zeus Olímpico</a></li>
+                <li><a href="espacio.html#plaka">Plaka</a></li>
+                <li><a href="espacio.html#teatro-dionisio">Teatro de Dionisio</a></li>
+                <li><a href="espacio.html#museo-bizantino">Museo Bizantino y Cristiano</a></li>
+                <li><a href="espacio.html#museo-arqueologico">Museo Arqueológico Nacional</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Atenas Web. Creada por: Miguel Angel Puentes.</p>
+    </footer>
+</body>
+</html>

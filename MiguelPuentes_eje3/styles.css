@@ -1,0 +1,616 @@
+/* Estilo básico para todas las páginas */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado principal */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Menú de navegación */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    align-items: center;
+}
+
+.main-nav .desktop-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    align-items: center;
+}
+
+.main-nav .desktop-menu li {
+    flex: 1;
+    text-align: center;
+}
+
+.main-nav .desktop-menu li a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav .desktop-menu li a:hover {
+    background-color: #C9A957;
+}
+
+/* Menú para pantallas pequeñas */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    background: none;
+    border: none;
+}
+
+.mobile-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Se oculta el menú para pantallas pequeñas por defecto */
+    background-color: #333333e7;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 40%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mobile-menu li {
+    text-align: center;
+}
+
+.mobile-menu li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu li a:hover {
+    background-color: #C9A957;
+}
+
+.toggle-menu {
+    display: none; /* El checkbox no se mostrará */
+}
+
+/* Estilos de menú para pantallas pequeñas */
+@media (max-width: 800px) {
+    .main-nav .desktop-menu {
+        display: none; /* Se oculta el menú de escritorio */
+    }
+
+    .hamburger {
+        display: block; /* Se muestra el ícono de hamburguesa */
+    }
+
+    /* Cuando el checkbox está marcado, se muestra el menú móvil */
+    .toggle-menu:checked + .hamburger + .mobile-menu {
+        display: block; /* Se muestra el menú móvil cuando se activa el checkbox */
+    }
+}
+
+
+/* Banner de imagen */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 700px;
+}
+
+/* Secciones principales */
+main {
+    padding: 20px;
+}
+
+.intro, .highlights {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.intro h2, .highlights h2 {
+    color: #333;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cards article {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 15px; 
+    margin-bottom: 15px; 
+}
+
+.cards article h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cards article p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.cards .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: white;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Lugares */
+section.places {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+article.place {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    gap: 20px; 
+}
+
+article.place .place-img {
+    flex: 0 1 100%; 
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+article.place .place-img.left {
+    order: 0; 
+}
+
+article.place .place-description {
+    flex: 1 1 60%; 
+    order: 2; 
+}
+
+article.place h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.cards .btn:hover {
+    background: #D4AF37;
+}
+
+/* Ajustes para imágenes en mobile */
+@media (max-width: 800px) {
+    article.place .place-img {
+        flex: 0 1 100%; /* Ocupa todo el ancho disponible */
+        max-width: 100%; /* Limita el ancho máximo al 100% */
+        object-fit: cover;
+        border-radius: 10px; /* Consistencia en bordes redondeados */
+    }
+}
+
+
+
+/* Sección de Personajes */
+.characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 60px; 
+    max-width: 1200px; 
+    margin: 20px auto; 
+    padding: 10px;
+    justify-items: center; 
+    align-content: start; 
+}
+
+
+/* Estilos para las Flipcards de personajes */
+.character {
+    margin-bottom: 40px; 
+    display: inline-block;
+    padding: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;  
+    height: 350px;  
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #f4f4f4;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.flip-card-back {
+    background-color: #f4f4f4;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-back h3 {
+    margin: 0 0 10px 0;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* Estilos para actividades*/
+.activities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activity {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.activity h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.activity p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Ajuste de sección actividades para pantallas pequeñas */
+@media (max-width: 800px) {
+    .activities {
+        gap: 0;
+    padding: 0;
+    }
+
+}
+
+/* Estilos generales para el contenedor principal de historia*/
+.container {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    width: 100%; 
+}
+
+/* Estilos para el menú de navegación */
+.internal-nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 250px;
+    flex-shrink: 0; 
+    min-width: 200px; /
+}
+
+/* Estilos para la cabecera del menú */
+.internal-nav h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Estilos para la lista del menú */
+.internal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.internal-nav ul li {
+    margin: 10px 0;
+}
+
+/* Estilos de los enlaces del menú */
+.internal-nav ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #007BFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.internal-nav ul li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.internal-nav ul li a:focus {
+    outline: none;
+    border: 2px solid #007BFF;
+    padding: 2px;
+}
+
+/* Estilos para el contenido principal */
+.main-historia {
+    padding: 20px;
+    background-color: #fff;
+    flex-grow: 1; 
+    width: 100%; 
+    min-width: 0; 
+}
+
+.main-historia p {
+    text-align: justify; 
+}
+
+.main-historia img {
+    width: 100%;
+    height: 350px;
+    max-width: 600px;
+    margin: 20px auto; 
+    display: block;
+    border-radius: 8px;
+}
+
+/* Ajuste de sección historia para pantallas pequeñas */
+@media (max-width: 800px) {
+    .container {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+}
+
+/*Estilo de creditos*/
+.credits {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.credits h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.credits p, .credits ul {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.credits ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.credits a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal del mapa */
+.map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del mapa con la imagen */
+.map-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Imagen del mapa */
+.map-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contenedor de los puntos */
+.points-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para los puntos interactivos */
+.map-point {
+    position: absolute;
+    font-size: 1.5rem; /* Tamaño del emoji */
+    cursor: pointer;
+    transform: translate(-50%, -50%); /* Centra el emoji en su coordenada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background: none; /* Asegura que no haya un fondo clickeable grande */
+}
+
+/* Cuadro de información emergente */
+.info-box {
+    pointer-events: none;
+    position: absolute;
+    top: 40px; /* Coloca el cuadro abajo del punto */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px; /* Más espacio interno */
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: normal; /* Permite dividir el texto en varias líneas */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    width: 140px; /* Asegura que todas las cajas sean del mismo tamaño */
+    min-height: 160px; /* Espacio suficiente para la imagen y el texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.info-image {
+    display: block;
+    width: 100px; /* Tamaño fijo */
+    height: 100px; /* Tamaño fijo */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+/* Permitir clics en los enlaces dentro del info-box */
+.info-box a {
+    pointer-events: auto;
+    z-index: 9999;
+}
+
+/* Muestra el cuadro al pasar el mouse */
+.map-point:hover .info-box {
+    opacity: 1;
+    z-index: 9999;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+/* Ajustes en móviles pequeños (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .map-wrapper {
+        /*Reducir tamaño del mapa*/
+        width: 100%;
+        min-width: 300px;
+    }
+
+    .map-point {
+        font-size: 1.2rem;
+    }
+
+    .info-box {
+        font-size: 0.8rem; /* Reduce el tamaño del texto en móviles */
+    }
+}
+
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}

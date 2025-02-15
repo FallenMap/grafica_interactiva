@@ -1,0 +1,417 @@
+/* Estilo básico para todas las páginas */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado principal */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Menú de navegación */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    background-color: #333;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    align-items: center;
+}
+
+.main-nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.main-nav ul li a {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+    background-color: #C9A957;
+}
+
+/* Banner de imagen */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 700px;
+}
+
+/* Secciones principales */
+main {
+    padding: 20px;
+}
+
+.intro, .highlights {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.intro h2, .highlights h2 {
+    color: #333;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cards article {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 15px; 
+    margin-bottom: 15px; 
+}
+
+.cards article h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cards article p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.cards .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: white;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Lugares */
+section.places {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+article.place {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    gap: 20px; 
+}
+
+article.place .place-img {
+    flex: 0 1 100%; 
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+article.place .place-img.left {
+    order: 0; 
+}
+
+article.place .place-description {
+    flex: 1 1 60%; 
+    order: 2; 
+}
+
+article.place h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.cards .btn:hover {
+    background: #D4AF37;
+}
+
+
+/* Sección de Personajes */
+.characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 60px; 
+    max-width: 1200px; 
+    margin: 20px auto; 
+    padding: 10px;
+    justify-items: center; 
+    align-content: start; 
+}
+
+
+/* Estilos para las Flipcards de personajes */
+.character {
+    margin-bottom: 40px; 
+    display: inline-block;
+    padding: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;  
+    height: 350px;  
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #f4f4f4;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.flip-card-back {
+    background-color: #f4f4f4;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-back h3 {
+    margin: 0 0 10px 0;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* Estilos para actividades*/
+.activities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activity {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.activity h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.activity p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos generales para el contenedor principal de historia*/
+.container {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    width: 100%; 
+}
+
+/* Estilos para el menú de navegación */
+.internal-nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 250px;
+    flex-shrink: 0; 
+    min-width: 200px; /
+}
+
+/* Estilos para la cabecera del menú */
+.internal-nav h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Estilos para la lista del menú */
+.internal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.internal-nav ul li {
+    margin: 10px 0;
+}
+
+/* Estilos de los enlaces del menú */
+.internal-nav ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #007BFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.internal-nav ul li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.internal-nav ul li a:focus {
+    outline: none;
+    border: 2px solid #007BFF;
+    padding: 2px;
+}
+
+/* Estilos para el contenido principal de historia*/
+.main-historia {
+    padding: 20px;
+    background-color: #fff;
+    flex-grow: 1; 
+    width: 100%; 
+    min-width: 0; 
+}
+
+.main-historia p {
+    text-align: justify; 
+}
+
+.main-historia img {
+    width: 100%;
+    height: 350px;
+    max-width: 600px;
+    margin: 20px auto; 
+    display: block;
+    border-radius: 8px;
+}
+
+/*Estilo de creditos*/
+.credits {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.credits h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.credits p, .credits ul {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.credits ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.credits a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
